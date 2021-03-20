@@ -348,7 +348,7 @@ let detailRender = (function() {
 })();
 
 $(document).on('touchstart touchmove touchend', (ev) => {
-    ev.preventDefaule();
+    ev.preventDefault();
 });
 let url = window.location.href,
     well = url.indexOf('#'),
