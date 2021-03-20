@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <!-- dev开发环境 -->
+    <link rel="stylesheet" href="css/index.min.css">
+    <!-- <link rel="stylesheet/less" href="css/index.less"> -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- <script src="js/less.min.js"></script> -->
+
+    <!-- prefixfree:设置前缀的插件 -->
+    <script src="js/prefixfree.min.js"></script>
+    <!-- REM -->
+    <script>
+        ~ function(window) {
+            //根据当前设备的宽度，动态计算出REM的换算比例，实现页面中元素的等比缩放
+            let computedREM = function() {
+                let winW = document.documentElement.clientWidth,
+                    desW = 640;
+                if (winW >= 640) {
+                    document.documentElement.style.fontSize = '100px';
+                    return;
+                }
+                document.documentElement.style.fontSize = winW / desW * 100 + 'px';
+            };
+            computedREM();
+            window.addEventListener('resize', computedREM);
+
+        }(window);
+    </script>
+</head>
+
+<body>
+    <!-- 外面套一层mainbox：控制当前页面的最大宽度，防止把做好的页面放在PC端预览的时候满屏展示，这样字体和盒子大小等被肆意拉伸 -->
+    <main class="mainBox">
+        <!-- loading -->
+        <section class="loadingBox">
+            <div class="title">
+                <h1>个人简历</h1>
+                <h2>H5场景交互型简历</h2>
+            </div>
+            <div class="progress">
+                <div class="current"></div>
+            </div>
+        </section>
+
+        <!-- phone -->
+        <section class="phoneBox">
+            <h2>
+                <img src="./img/zf_phoneLogo.png" alt="">
+                <span class="time">00:00</span>
+            </h2>
+            <div class="answer">
+                <div class="markMove"></div>
+                <a href="javascript:;" class="markLink"></a>
+            </div>
+            <div class="hang">
+                <a href="javascript:;" class="markLink"></a>
+            </div>
+            <!-- audio -->
+            <audio src="./audio/bell.mp3" loop preload="none" id="answerBell"></audio>
+            <audio src="./audio/say.mp3" preload="none" id="introduction"></audio>
+        </section>
+        <!-- message -->
+        <section class="messageBox">
+            <ul class="wrapper clearfix">
+                <li class="self">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageStudent.png" alt="" class="pic"> 面试官，你好，我叫高明慧，来自于江苏常州，于2022年将毕业于宿迁学院，基于自己的个人兴趣，我自学了前端的相关知识，希望能够找到自己心仪的工作
+                </li>
+                <li class="inter">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageLogo.png" alt="" class="pic"> 哇塞，好牛X啊，介绍一下自己的专业技能吧
+                </li>
+                <li class="self">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageStudent.png" alt="" class="pic">我的HTML、CSS、JS基础扎实，对于H5C3能够熟练使用，熟悉ES6规范，熟悉jquery类库，熟悉Promise设计模式，熟悉组件和插件的封装，同时了解git和npm，能够进行协同开发。
+                </li>
+                <li class="inter">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageLogo.png" alt="" class="pic"> 框架会么？我们公司使用的是VUE和REACT
+                </li>
+                <li class="self">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageStudent.png" alt="" class="pic"> 框架的话目前只学习了VUE，了解VUE的原理，能够熟练使用VUE进行快速开发；对于REACT还没有涉猎，如果公司需要，我自认为我的学习能力还是可以的，可以快速上手。
+                </li>
+                <li class="inter">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageLogo.png" alt="" class="pic"> webpack会么？
+                </li>
+                <li class="self">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageStudent.png" alt="" class="pic"> 之前的项目都是基于脚手架完成的，自己偶尔去修改一些webpack的配置项
+                </li>
+                <li class="self">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageStudent.png" alt="" class="pic"> 不过目前正在深入研究，可以搭建简单的脚手架
+                </li>
+                <li class="inter">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageLogo.png" alt="" class="pic"> 后台的语言了解多少？
+                </li>
+                <li class="self">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageStudent.png" alt="" class="pic"> 对于node/eapress等后台开发也有所涉猎，目前能够使用express写一些简单的接口，但是掌握的还不是特别好，对于使用node进行后台开发目前还在研究中
+                </li>
+                <li class="inter">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageLogo.png" alt="" class="pic"> 你觉得你的优点在哪？和其他人相比，为啥要录用你？
+                </li>
+                <li class="self">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageStudent.png" alt="" class="pic"> 肯吃苦，肯加班
+                </li>
+                <li class="inter">
+                    <i class="arrow"></i>
+                    <img src="img/zf_messageLogo.png" alt="" class="pic"> 好的，就是你了！明天来上班！
+                </li>
+            </ul>
+            <div class="keyBoard">
+                <span></span>
+                <!--好的，俺马上介绍！-->
+                <a href="javascript:;" class="submit"></a>
+            </div>
+            <audio src="audio/music.mp3" preload="none" loop id="demonMusic"></audio>
+        </section>
+        <!-- cube -->
+        <section class="cubeBox">
+            <ul class="cube">
+                <li>
+                    <div class="cubeLi">个人技能</div>
+                </li>
+                <li>
+                    <div class="cubeLi">知识体系</div>
+                </li>
+                <li>
+                    <div class="cubeLi">兴趣爱好</div>
+                </li>
+                <li>
+                    <div class="cubeLi">基本信息</div>
+                </li>
+                <li>
+                    <div class="cubeLi">工作经验</div>
+                </li>
+                <li>
+                    <div class="cubeLi">教育背景</div>
+                </li>
+            </ul>
+            <img src="img/zf_cubeTip.png" alt="" class="tip">
+        </section>
+        <!-- detail -->
+        <section class="detailBox">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- page1 -->
+                    <div class="swiper-slide page1">
+                        <div class="return"></div>
+                        <dl>
+                            <dt>个人技能</dt>
+                            <dd><em>01</em>
+                                <a href="#">HTML（5）+CSS（3）+移动端响应式布局开发及相关插件的使用</a>
+                            </dd>
+                            <dd><em>02</em>
+                                <a href="#">掌握js的闭包及堆栈内存以及this的处理</a>
+                            </dd>
+                            <dd><em>03</em>
+                                <a href="#">掌握js面向对象编程，可以基于面向对对象封装组件插件等</a>
+                            </dd>
+                            <dd><em>04</em>
+                                <a href="#">掌握JS中Object、Array、String、Math、Date、RegExp、JSON对象中常用API的使用</a>
+                            </dd>
+                            <dd><em>05</em>
+                                <a href="#">掌握JS同步异步编程及Promise设计模式</a>
+                            </dd>
+                            <dd><em>06</em>
+                                <a href="#">掌握JS的DOM、BOM操作及重绘回流的优化</a>
+                            </dd>
+                            <dd><em>07</em>
+                                <a href="#">掌握JS事件、JS动画等等</a>
+                            </dd>
+                            <dd><em>08</em>
+                                <a href="#">掌握HTTP交互及AJAX封装及跨域数据共享</a>
+                            </dd>
+                            <dd><em>09</em>
+                                <a href="#">掌握ES6新特性以及ES6常用语法</a>
+                            </dd>
+                            <dd><em>010</em>
+                                <a href="#">掌握VUE：VUE-CLI/VUE-ROUTER/VUEX/VUE ELEMENT等等</a>
+                            </dd>
+                            <dd><em>011</em>
+                                <a href="#">辅助技能：NODE、WEBPACK、GIT等等</a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- page2 -->
+                    <div class="swiper-slide page2">
+                        <div class="return"></div>
+                        <h2 class="title">知识体系</h2>
+                        <img src="img/zf_course1.png" alt="">
+                        <img src="img/zf_course2.png" alt="">
+                        <img src="img/zf_course3.png" alt="">
+                        <img src="img/zf_course4.png" alt="">
+                        <img src="img/zf_course5.png" alt="">
+                        <img src="img/zf_course6.png" alt="">
+                        <img src="img/zf_course.png" alt="">
+                    </div>
+                    <!-- page3 -->
+                    <div class="swiper-slide page3">
+                        <div class="return"></div>
+                        <h2 class="title">兴趣爱好</h2>
+                        <ul>
+                            <li>Study</li>
+                            <li>Game</li>
+                            <li>Spot</li>
+                            <li>Magic</li>
+                            <li>Comic</li>
+                            <li>Funny</li>
+                        </ul>
+                    </div>
+                    <!-- page4 -->
+                    <div class="swiper-slide page4">
+                        <div class="return"></div>
+                        <h2 class="title">基本信息</h2>
+                        <table class="basicMessage">
+                            <tr>
+                                <td>姓名</td>
+                                <td>高明慧</td>
+                            </tr>
+                            <tr>
+                                <td>出生年月</td>
+                                <td>1999.11</td>
+                            </tr>
+                            <tr>
+                                <td>电话</td>
+                                <td>13776821195</td>
+                            </tr>
+                            <tr>
+                                <td>就读院校</td>
+                                <td>宿迁学院</td>
+                            </tr>
+                            <tr>
+                                <td>学历</td>
+                                <td>本科</td>
+                            </tr>
+                            <tr>
+                                <td>求职意向</td>
+                                <td>WEB前端开发</td>
+                            </tr>
+                            <tr>
+                                <td>个人博客</td>
+                                <td><a href="https://blog.csdn.net/gmh1118">https://blog.csdn.net/gmh1118</a></td>
+                            </tr>
+                            <tr>
+                                <td>邮箱</td>
+                                <td>gao_ming_hui_1118@163.com</td>
+                            </tr>
+                            <tr>
+                                <td>GITHUB</td>
+                                <td><a href="https://github.com/1118gmh">https://github.com/1118gmh</a></td>
+                            </tr>
+                            <tr>
+                                <td>籍贯</td>
+                                <td>江苏连云港</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- page5 -->
+                    <div class="swiper-slide page5">
+                        <div class="return"></div>
+                        <h2 class="title">工作经验</h2>
+                        <span>目前还在学校学习，暂时无工作经验！！！</span>
+                    </div>
+                    <!-- page6 -->
+                    <div class="swiper-slide page6">
+                        <div class="return"></div>
+                        <h2 class="title">教育背景</h2>
+                        <dl class="education">
+                            <dt>2018.09-2022.06 <br> 宿迁学院 物联网工程（本科）</dt>
+                            <dd><span>获的荣誉：</span>获得江苏计算机登记考试证书，获得全国计算机等级考试证书，获得英语4级证书，多次获得学校奖学金...</dd>
+                            <dd><span>主修课程：</span>java基础、计算机网络、操作系统、数据库分析与设计、无线传感网、数据通信、单片机、RFID...</dd>
+                            <dd><span>大学经历：</span>积极参加学校组织的各种活动...</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/makisu.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
