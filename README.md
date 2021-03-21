@@ -4,3 +4,6 @@ This project is a creative interactive resume project based on h5c3. Zepto, less
 
 This project mainly designs the loading section, phone section, cube imitation section and detail page section. This project is only used for personal practice mobile terminal development
 
+### QR code Preview
+
+![个人简历](.\preview\resume.png)
