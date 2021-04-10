@@ -347,9 +347,9 @@ let detailRender = (function() {
     }
 })();
 
-$(document).on('touchstart touchmove touchend', (ev) => {
-    ev.preventDefault();
-});
+// $(document).on('touchstart touchmove touchend', (ev) => {
+//     ev.preventDefault();
+// });
 let url = window.location.href,
     well = url.indexOf('#'),
     hash = well === -1 ? null : url.substring(well + 1);
